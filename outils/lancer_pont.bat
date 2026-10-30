@@ -5,8 +5,8 @@ title Dragon Quest IV - pont vers Unity (piste 3)
 echo.
 echo  Dragon Quest IV - pont moteur vers Unity (piste 3, essai)
 echo  ---------------------------------------------------------
-echo  Lit tes APK francais dans ..\..\jeux\DQ4\patched_apks
-echo  et ta derniere sauvegarde dans ..\..\jeux\DQ4\saves (tes fichiers ne sont jamais modifies).
+echo  Lit tes APK francais dans jeux\DQ4\patched_apks (dossier du depot, sinon ..\..\jeux\DQ4)
+echo  et ta derniere sauvegarde dans jeux\DQ4\saves (tes fichiers ne sont jamais modifies).
 echo  Le moteur du jeu tourne ici ; Unity ^(projet unity_pc de ce depot, bouton Play^) affiche.
 echo  Laisse cette fenetre ouverte pendant que tu joues dans Unity. Ctrl+C pour arreter.
 echo.

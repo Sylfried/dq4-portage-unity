@@ -318,7 +318,8 @@ def extraire_datapack(apk, export):
 
 def main():
     ici = os.path.dirname(os.path.abspath(__file__))
-    jeux = os.path.normpath(os.path.join(ici, '..', '..', 'jeux', 'DQ4'))
+    jeux = os.path.normpath(os.path.join(ici, '..', 'jeux', 'DQ4'))                    # 1) dossier jeux/ a la racine du depot (ignore par git)
+    if not os.path.isdir(jeux): jeux = os.path.normpath(os.path.join(ici, '..', '..', 'jeux', 'DQ4'))   # 2) sinon jeux/ a cote du depot
     ap = argparse.ArgumentParser(description='Pont moteur -> Unity (piste 3)')
     ap.add_argument('--apk', default=os.path.join(jeux, 'patched_apks'), help='dossier des 3 APK (version francaise)')
     ap.add_argument('--saves-lecture', default=None, help='dossier contenant data1.dat... (par defaut : la plus recente sauvegarde de jeux/DQ4/saves)')
