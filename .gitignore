@@ -1,0 +1,37 @@
+# --- Contenu Square Enix : JAMAIS dans ce dépôt ---
+*.apk
+*.so
+*.unity3d
+*.obb
+*.mpt
+*.dat
+jeux/
+saves/
+sauvegardes/
+cache/
+captures/
+*.pkl
+
+# --- Python / environnement local ---
+__pycache__/
+*.pyc
+.venv/
+modules_ok.txt
+*.log
+*.zip
+
+# --- Projet Unity : seuls nos scripts, shaders et réglages de base sont versionnés ---
+unity_pc/Library/
+unity_pc/Temp/
+unity_pc/Logs/
+unity_pc/UserSettings/
+unity_pc/obj/
+unity_pc/Build*/
+unity_pc/Export/
+unity_pc/Assets/Export/
+unity_pc/Assets/StreamingAssets/
+unity_pc/Packages/packages-lock.json
+unity_pc/ProjectSettings/*.asset
+*.meta
+*.csproj
+*.sln
