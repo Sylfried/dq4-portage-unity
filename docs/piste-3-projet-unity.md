@@ -47,7 +47,7 @@ Tester si **Unity lui-même** (Éditeur 2022.3.62f3, licence Personal gratuite) 
 
 ## Machines
 - **pdc** (ancien PC) : `C:\Users\sylfr\Downloads\DQ Patch\portage_pc` (ancien dossier de `dq4-pc`), APK et sauvegardes dans `DQ Patch\jeux\DQ4`.
-- **kpl-031** (actuel, utilisateur `sylfried.coutant`) : dépôts dans `C:\Users\sylfried.coutant\Downloads\Projet DQ\` : `dq4-portage-unity` (ce dépôt), `dq4-pc` (ancien dépôt), `jeux` (lien vers les jeux : APK dans `jeux\DQ4\patched_apks`, sauvegardes dans `jeux\DQ4\saves\20261007_190735`, emplacement 4 présent). La disposition `..\..\jeux\DQ4` (depuis `dq4_pc\`) des `.bat` et de `pont.py` fonctionne telle quelle.
+- **kpl-031** (actuel, utilisateur `sylfried.coutant`) : ce dépôt est un clone git dans `C:\Users\sylfried.coutant\Downloads\Projet DQ\dq4-portage-unity`. Les jeux sont **copiés dans le dépôt** (`jeux\DQ4\patched_apks` : les 3 APK français, `jeux\DQ4\saves\20261007_190735` : emplacements 1 à 5, copie octet par octet du 30/10/2026 depuis le dossier du projet de traduction) : `pont.py` cherche d'abord `jeux\DQ4` à la racine du dépôt, puis `..\..\jeux\DQ4` depuis `dq4_pc\`. Le dossier `jeux` est ignoré par git (`.gitignore` : `jeux/`, `*.apk`, `*.dat`). Si les APK sont reconstruits par le projet de traduction, les recopier ici et relancer avec `--forcer-export`.
 - Au premier lancement, les `.bat` créent `dq4_pc\.venv` (Python 3.10 à 3.14 requis, 1 à 3 minutes). Un `.venv` copié d'un autre PC ne fonctionne pas : le supprimer.
 - La session cloud ne peut pas faire `git fetch` sur les clones de kpl-031 (pas d'identifiants) : les mises à jour passent par un `git pull` de Sylfried.
 - Fichiers générés par Unity et ignorés : `.meta`, `Library/`, `Packages/packages-lock.json`, `ProjectSettings/*.asset`.

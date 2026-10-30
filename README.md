@@ -24,14 +24,15 @@ La version **native sans Unity** (visionneuse pyglet/OpenGL) reste dans le dép�
 Ce dépôt est **public** et ne contient **que du code et des notes**. Le programme lit *tes* fichiers (APK patchés, sauvegardes) sur *ton* PC ; rien n'est copié ni distribué. Les APK, `.so`, données Unity, sauvegardes, caches, captures et fichiers exportés sont exclus par `.gitignore` : ne jamais les forcer (`git add -f`). Ce dépôt est séparé du patch FR.
 
 ## Lancer (Windows)
-Disposition attendue (les `.bat` et `pont.py` cherchent les jeux en `..\..\jeux\DQ4` depuis `dq4_pc\`) :
+Disposition attendue : les jeux sont lus dans `jeux\DQ4\` **à la racine du dépôt** (ignoré par git) ou, s'il n'existe pas, dans `..\jeux\DQ4\` à côté du dépôt :
 
 ```
-Projet DQ\
+dq4-portage-unity\
   jeux\DQ4\patched_apks\   (base.apk, split_config.arm64_v8a.apk, split_UnityDataAssetPack.apk)
   jeux\DQ4\saves\<horodatage>\data1.dat
-  dq4-portage-unity\       <- ce dépôt
+  dq4_pc\  outils\  unity_pc\  ...
 ```
+Autre emplacement : `outils\lancer_pont.bat --apk <dossier des 3 APK> --saves-lecture <dossier de data1.dat>`.
 
 1. Double-clic sur `outils\lancer_pont.bat` (la première fois : environnement Python local `dq4_pc\.venv`, 1 à 3 minutes ; Python 3.10 à 3.14).
 2. Unity Hub → *Ajouter un projet à partir du disque* → `unity_pc` (Éditeur **2022.3.62f3**), menu **DQ4 → Lancer le jeu**.
