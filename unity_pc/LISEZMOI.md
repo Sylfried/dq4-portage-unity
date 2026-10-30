@@ -4,7 +4,7 @@ Le moteur du jeu (`libdq4core.so`) reste émulé en Python (`dq4_pc/pont.py`) ; 
 
 ## Il te faut
 - Unity Hub + Éditeur **2022.3.62f3** (module Windows suffit, licence Personal).
-- Tes fichiers du jeu (APK français dans `jeux\DQ4\patched_apks`, une sauvegarde dans `jeux\DQ4\saves`, à la racine du dépôt ; sinon dans `..\jeux\DQ4`).
+- Tes fichiers du jeu (APK français dans `jeux\DQ4\patched_apks`, une sauvegarde dans `jeux\DQ4\saves`, à la racine du dépôt).
 
 ## Lancer (deux fenêtres, dans l'ordre que tu veux)
 1. **Le pont** : double-clic sur `outils\lancer_pont.bat`. La première fois il prépare Python (1 à 3 min) et exporte l'église et le village (quelques secondes), puis affiche « Pont prêt ». Laisse la fenêtre ouverte.

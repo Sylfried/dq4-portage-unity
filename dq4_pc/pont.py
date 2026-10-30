@@ -318,8 +318,7 @@ def extraire_datapack(apk, export):
 
 def main():
     ici = os.path.dirname(os.path.abspath(__file__))
-    jeux = os.path.normpath(os.path.join(ici, '..', 'jeux', 'DQ4'))                    # 1) dossier jeux/ a la racine du depot (ignore par git)
-    if not os.path.isdir(jeux): jeux = os.path.normpath(os.path.join(ici, '..', '..', 'jeux', 'DQ4'))   # 2) sinon jeux/ a cote du depot
+    jeux = os.path.normpath(os.path.join(ici, '..', 'jeux', 'DQ4'))                    # jeux/DQ4 a la racine du depot (ignore par git) : copie des APK francais et des sauvegardes
     ap = argparse.ArgumentParser(description='Pont moteur -> Unity (piste 3)')
     ap.add_argument('--apk', default=os.path.join(jeux, 'patched_apks'), help='dossier des 3 APK (version francaise)')
     ap.add_argument('--saves-lecture', default=None, help='dossier contenant data1.dat... (par defaut : la plus recente sauvegarde de jeux/DQ4/saves)')
@@ -334,6 +333,11 @@ def main():
     ap.add_argument('--extraire-datapack', action='store_true', help='copie datapack.unity3d dans le dossier d\'export puis quitte')
     a = ap.parse_args()
     if a.export is None: a.export = os.path.join(a.cache, 'unity')
+    if not os.path.isfile(os.path.join(a.apk, 'base.apk')):
+        print('APK francais introuvables dans : %s' % a.apk)
+        print('Copie base.apk, split_config.arm64_v8a.apk et split_UnityDataAssetPack.apk dans %s' % os.path.join(jeux, 'patched_apks'))
+        print('(et une sauvegarde dans %s), ou indique leur dossier avec --apk.' % os.path.join(jeux, 'saves'))
+        sys.exit(1)
     if a.saves_lecture is None:
         dossiers = sorted(glob.glob(os.path.join(jeux, 'saves', '*')))
         a.saves_lecture = dossiers[-1] if dossiers else a.saves_ecriture

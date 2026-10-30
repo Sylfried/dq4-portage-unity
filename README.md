@@ -24,7 +24,7 @@ La version **native sans Unity** (visionneuse pyglet/OpenGL) reste dans le dép�
 Ce dépôt est **public** et ne contient **que du code et des notes**. Le programme lit *tes* fichiers (APK patchés, sauvegardes) sur *ton* PC ; rien n'est copié ni distribué. Les APK, `.so`, données Unity, sauvegardes, caches, captures et fichiers exportés sont exclus par `.gitignore` : ne jamais les forcer (`git add -f`). Ce dépôt est séparé du patch FR.
 
 ## Lancer (Windows)
-Disposition attendue : les jeux sont lus dans `jeux\DQ4\` **à la racine du dépôt** (ignoré par git) ou, s'il n'existe pas, dans `..\jeux\DQ4\` à côté du dépôt :
+Disposition attendue : les jeux sont lus **uniquement** dans `jeux\DQ4\` à la racine du dépôt (dossier ignoré par git ; ce sont des copies, indépendantes de tout autre dossier du PC) :
 
 ```
 dq4-portage-unity\
